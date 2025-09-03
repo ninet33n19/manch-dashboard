@@ -1,28 +1,51 @@
-import { Card } from "../ui/card";
+import React from "react";
+import { Card } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { MoreHorizontal } from "lucide-react";
 
-type MainCardProps = {
+type ActiveCasesCardProps = {
   icon: React.ReactNode;
   title: string;
   value: string | number;
 };
 
-export function MainCard({ icon, title, value }: MainCardProps) {
+export function ActiveCasesCard({ icon, title, value }: ActiveCasesCardProps) {
   return (
-    // REMOVED `w-fit` and `max-w-sm` to allow the card to expand and fill available space.
-    <Card className="flex flex-col gap-2 p-4">
+    <Card className="flex flex-col gap-2 rounded-2xl border bg-white p-4 w-full">
       {/* Header Row */}
-      <div className="flex items-center gap-3">
-        {/* Icon Wrapper */}
-        <div className="flex h-fit w-fit items-center justify-center rounded-md bg-[#D8F9B8] p-2">
-          {icon}
+      <div className="flex items-start justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex size-8 items-center justify-center rounded-[8px] bg-[#D8F9B8] ">
+            {icon}
+          </div>
+          <p className="font-normal text-lg">{title}</p>
         </div>
-        {/* Title */}
-        <p className="font-semibold text-slate-600">{title}</p>
+
+        {/* Dropdown Menu */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-8 w-8 p-0 text-gray-400">
+              <span className="sr-only">Open menu</span>
+              <MoreHorizontal className="h-5 w-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem>View Details</DropdownMenuItem>
+            <DropdownMenuItem>Export</DropdownMenuItem>
+            <DropdownMenuItem>Remove</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       {/* Value Row */}
-      <div>
-        <span className="text-3xl font-bold text-slate-900">{value}</span>
+      <div className="mt-4">
+        <span className="text-2xl font-medium text-slate-900">{value}</span>
       </div>
     </Card>
   );

@@ -71,7 +71,6 @@ export function AppSidebar() {
             <span className="text-xl font-bold">मंच</span>
             <span className="text-lg italic text-gray-700">manch.</span>
           </div>
-          <ArrowLeftToLine className="w-5 h-5" />
         </div>
       </SidebarHeader>
 
