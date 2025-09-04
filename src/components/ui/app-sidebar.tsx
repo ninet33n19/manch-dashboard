@@ -6,7 +6,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarTrigger,
-} from "@/components/ui/sidebar"; // Assuming these are your custom components
+} from "@/components/ui/sidebar";
 import {
   ArrowLeftToLine,
   Home,
@@ -26,7 +26,7 @@ const mainNavItems = [
   { name: "Home", url: "#", icon: <Home size={18} />, active: false },
   {
     name: "Company",
-    url: "#",
+    url: "/company",
     icon: <ArrowRightLeft size={18} />,
     active: true,
   },
