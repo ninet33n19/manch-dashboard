@@ -17,7 +17,7 @@ type ActiveCasesCardProps = {
 
 export function ActiveCasesCard({ icon, title, value }: ActiveCasesCardProps) {
   return (
-    <Card className="flex flex-col gap-2 rounded-2xl border bg-white p-4 w-full">
+    <Card className="flex flex-col gap-2 rounded-2xl border bg-white p-4 shadow-none">
       {/* Header Row */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
@@ -30,9 +30,9 @@ export function ActiveCasesCard({ icon, title, value }: ActiveCasesCardProps) {
         {/* Dropdown Menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0 text-gray-400">
+            <Button variant="ghost" className="size-8 p-0 text-gray-400">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-5 w-5" />
+              <MoreHorizontal className="size-5" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

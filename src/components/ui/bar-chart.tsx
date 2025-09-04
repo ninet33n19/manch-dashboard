@@ -73,7 +73,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export function ChartBarStacked() {
   return (
-    <Card className="rounded-2xl border bg-white p-5">
+    <Card className="rounded-2xl border bg-white p-5 shadow-none">
       <CardHeader className="p-0">
         <div className="flex items-center justify-between">
           <CardTitle className="text-xl font-medium text-[#2B2D2D]">
@@ -81,9 +81,9 @@ export function ChartBarStacked() {
           </CardTitle>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0 text-gray-400">
+              <Button variant="ghost" className="size-8 p-0 text-gray-400">
                 <span className="sr-only">Open menu</span>
-                <MoreHorizontal className="h-5 w-5" />
+                <MoreHorizontal className="size-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -94,7 +94,7 @@ export function ChartBarStacked() {
         </div>
       </CardHeader>
       <CardContent className="p-0 mt-2">
-        <ChartContainer config={chartConfig} className="h-[242px] w-full">
+        <ChartContainer config={chartConfig} className="h-56 w-full">
           <BarChart accessibilityLayer data={chartData} margin={{ top: 30 }}>
             {/* Define the striped pattern */}
             <defs>

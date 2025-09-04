@@ -89,7 +89,7 @@ const NotificationCard = ({
       <div className="relative h-10">
         <div
           className={cn(
-            "absolute bottom-0 right-0 w-2/3 h-20 bg-white rounded-tl-xl shadow-[0_-10px_20px_-5px_rgba(0,0,0,0.03)] flex items-center pl-4",
+            "absolute bottom-0 right-0 w-2/3 h-20 bg-white rounded-tl-xl flex items-center pl-4",
             isHighlighted ? "bg-white border" : "bg-[#e8f7d3]",
           )}
         >
@@ -108,10 +108,12 @@ const NotificationCard = ({
 // --- MAIN COMPONENT ---
 export function SettlementNotifications() {
   return (
-    <Card className="w-full md:w-[24rem] h-full flex flex-col rounded-xl border bg-white p-4">
+    <Card className="w-full md:w-[22rem] h-full flex flex-col rounded-xl border bg-white p-4 shadow-none">
       <CardHeader className="p-2">
         <div className="flex items-center justify-between">
-          <CardTitle>Settlement Notifications</CardTitle>
+          <CardTitle className="text-lg font-medium text-[#2B2D2D]">
+            Settlement Notifications
+          </CardTitle>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="h-8 w-8 p-0 text-gray-400">
