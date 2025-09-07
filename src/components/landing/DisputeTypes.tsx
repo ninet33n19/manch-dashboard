@@ -165,7 +165,7 @@ const DisputeTypes: React.FC = () => {
                 M
               </div>
               <span className="text-sm font-medium text-gray-700">
-                Why Monch
+                Why Manch
               </span>
             </div>
 
