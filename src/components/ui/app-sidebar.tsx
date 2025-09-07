@@ -5,10 +5,8 @@ import {
   SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
-  ArrowLeftToLine,
   Home,
   ArrowRightLeft,
   BarChart3,
@@ -18,12 +16,13 @@ import {
   RefreshCw,
   Settings,
   Headphones,
+  LogOut,
 } from "lucide-react";
 import Link from "next/link";
 import { clsx } from "clsx";
 
 const mainNavItems = [
-  { name: "Home", url: "#", icon: <Home size={18} />, active: false },
+  { name: "Home", url: "/home", icon: <Home size={18} />, active: false },
   {
     name: "Company",
     url: "/company",
@@ -60,6 +59,7 @@ const footerNavItems = [
   { name: "Refresh", url: "#", icon: <RefreshCw size={18} /> },
   { name: "Settings", url: "#", icon: <Settings size={18} /> },
   { name: "Help Center", url: "#", icon: <Headphones size={18} /> },
+  { name: "Logout", url: "/", icon: <LogOut size={18} /> },
 ];
 
 export function AppSidebar() {
@@ -69,7 +69,7 @@ export function AppSidebar() {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <span className="text-xl font-bold">मंच</span>
-            <span className="text-lg italic text-gray-700">manch.</span>
+            <span className="text-lg text-gray-700">manch.</span>
           </div>
         </div>
       </SidebarHeader>
