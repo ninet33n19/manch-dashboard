@@ -114,7 +114,7 @@ const disputes: Dispute[] = [
     icon: <MaritalIcon />,
     title: "Marital disputes",
     description:
-      "Conflicts between spouses often arise from differences in finances, communication, trust, parenting, or lifestyle. Such disagreements can create emotional stress, disrupt family harmony, and may sometimes result in separation or legal action. Monch offers to provide counseling, mediation, or court proceedings.",
+      "Conflicts between spouses often arise from differences in finances, communication, trust, parenting, or lifestyle. Such disagreements can create emotional stress, disrupt family harmony, and may sometimes result in separation or legal action. Manch offers to provide counseling, mediation, or court proceedings.",
   },
   {
     icon: <ArtIcon />,
