@@ -20,7 +20,7 @@ export default function Home() {
         <div className="w-full flex flex-col items-start gap-4">
           <div className="w-full flex flex-col lg:flex-row lg:items-stretch gap-4">
             <div className="flex flex-col items-start gap-4 flex-grow w-full">
-              <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="w-full grid grid-cols-4 gap-4">
                 <ActiveCasesCard
                   icon={<DollarSignIcon className="size-5" />}
                   title={"Active Cases"}
