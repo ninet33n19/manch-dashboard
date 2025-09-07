@@ -27,7 +27,7 @@ export function SiteHeader() {
           <span className="rounded-md bg-[#D8F9B8] px-2 py-1 text-base font-bold text-black">
             मंच
           </span>
-          <span className="text-base italic text-foreground">manch.</span>
+          <span className="text-base text-foreground">manch.</span>
         </div>
       </div>
 
