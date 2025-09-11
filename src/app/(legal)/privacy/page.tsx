@@ -1,4 +1,5 @@
-import { privacyData } from "@/util/privacy-data";
+import Footer from "@/components/ui/footer";
+import { privacyData } from "@/data/privacy-data";
 import Link from "next/link";
 
 const PrivacyPolicyPage = () => {

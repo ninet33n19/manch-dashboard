@@ -3,6 +3,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Badge } from "@/components/ui/badge";
 import OurPanel from "@/components/about/OurPanel";
 import AboutCta from "@/components/about/AboutCta";
+import Footer from "@/components/ui/footer";
 
 const images = [
   "/assests/office.jpg",
@@ -14,7 +15,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <div className="mt-56 mb-20">
+      <div className="mt-56">
         <div className="flex flex-col gap-6 justify-center items-center text-center mb-20 mx-10">
           <p className="text-5xl font-medium font-inter leading-snug">
             Manch is on a mission <br />
@@ -48,6 +49,7 @@ export default function AboutPage() {
         </div>
         <OurPanel />
         <AboutCta />
+        <Footer />
       </div>
     </>
   );

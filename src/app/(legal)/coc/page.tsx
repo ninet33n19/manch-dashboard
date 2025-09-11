@@ -1,4 +1,4 @@
-import { cocData } from "@/util/coc-data";
+import { cocData } from "@/data/coc-data";
 import Link from "next/link";
 
 const CodeOfConductPage = () => {
