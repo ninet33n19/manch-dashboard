@@ -14,7 +14,7 @@ export default function LegalLayout({
       <main>
         <Navbar />
         {children}
-        <Footer />
+        <Footer footerText="Offering online arbitration & mediation services to parties who wish to have their disputes resolved outside of the courtroom" />
       </main>
     </div>
   );
