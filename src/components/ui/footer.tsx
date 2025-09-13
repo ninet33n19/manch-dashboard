@@ -1,12 +1,17 @@
 import { Instagram, Linkedin, Globe, Mail } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
-const Footer = () => {
+interface FooterProps {
+  footerText: string;
+  className?: string;
+}
+
+const Footer = ({ footerText, className }: FooterProps) => {
   return (
     <footer className="mx-2 bg-[#E7E6E4] mt-4 rounded-2xl">
       <div className="pt-16 px-10 flex justify-between">
-        <h1 className="font-inter font-medium text-5xl text-[#2B2D2D] max-w-xl">
-          Join the 12,000+ businesses using Finns
+        <h1 className={`font-inter font-medium text-[#2B2D2D] ${className}`}>
+          {footerText}
         </h1>
         <button className="flex gap-2 bg-[#2B2D2D] items-center justify-center w-48 h-12 rounded-xl">
           <img src="/icons/sparkle.svg" />

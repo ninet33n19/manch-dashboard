@@ -49,7 +49,7 @@ export default function AboutPage() {
         </div>
         <OurPanel />
         <AboutCta />
-        <Footer />
+        <Footer footerText="Offering online arbitration & mediation services to parties who wish to have their disputes resolved outside of the courtroom" />
       </div>
     </>
   );

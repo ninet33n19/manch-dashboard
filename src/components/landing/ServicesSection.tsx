@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HighlightedText from "../ui/highlighted-text";
 
 const Card = ({
   title,
@@ -19,10 +20,9 @@ const Card = ({
 export default function ServicesSection() {
   return (
     <div className="flex flex-col mt-56 gap-20 justify-center items-center mx-36 ">
-      <h1 className="text-5xl font-inter text-center leading-tight">
-        Everything you need,
-        <br />
-        nothing you don't
+      <h1 className="text-5xl font-inter font-medium text-center leading-tight w-full">
+        The Opportunity for Justice in a{" "}
+        <HighlightedText>virtual world.</HighlightedText>
       </h1>
       <div className="flex gap-4">
         <Card
