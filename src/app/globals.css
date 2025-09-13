@@ -44,7 +44,7 @@
 
 :root {
     --radius: 0.625rem;
-    --background: #F3F2F1;
+    --background: #f3f2f1;
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
@@ -150,4 +150,13 @@
 
 .scroller[data-speed="normal"] {
     --_animation-duration: 40s;
+}
+
+/*highlighted text effect css*/
+.highlight-svg {
+    background-image: url("/assests/highlight.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* Stretches the SVG to fit the text */
+    padding: 0.1em 0.2em; /* Add some padding to make the highlight larger than the text */
+    margin: -0.1em -0.2em; /* Adjust margin to compensate for padding */
 }
