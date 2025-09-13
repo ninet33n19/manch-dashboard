@@ -41,6 +41,23 @@ export default function ServicesSection() {
           image="/assests/art.png"
         />
       </div>
+      <div className="flex gap-4">
+        <Card
+          title="Sports Disputes"
+          description="Resolve sports-related conflicts efficiently through a neutral forum"
+          image="/assests/sports.png"
+        />
+        <Card
+          title="E-commerce Disputes"
+          description="Designed to address consumer complaints, product issues & refund failures."
+          image="/assests/ecommerce.png"
+        />
+        <Card
+          title="Art Disputes"
+          description="Address issues of authenticity, ownership, provenance, copyright & exhibition agreements."
+          image="/assests/art.png"
+        />
+      </div>
     </div>
   );
 }

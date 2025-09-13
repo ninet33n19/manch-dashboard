@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { ArrowRight, ChevronRight, Play } from "lucide-react";
+import { ArrowRight, ChevronRight, Play, SwatchBookIcon } from "lucide-react";
 
 export function HeroText() {
   return (
@@ -40,16 +40,30 @@ export function HeroText() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row items-end">
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Button className="bg-[#2B2D2D] hover:bg-[#1F2121] text-white rounded-lg px-8 py-4 text-lg font-medium flex items-center space-x-2 h-auto">
-            <span>Book a call</span>
-            <ArrowRight className="w-4 h-4 text-white" />
-          </Button>
+      <div className="flex flex-col gap-4 items-end">
+        <div className="bg-white rounded-2xl flex flex-col gap-4 px-5 py-4 w-56 h-fit">
+          <div className="flex gap-4">
+            <SwatchBookIcon />
+            <p className="font-inter font-semibold text-lg text-[#2B2D2D]">
+              Starter Guide
+            </p>
+          </div>
+          <span className="font-inter font-normal text-lg text-[#2B2D2D]">
+            We’ve got you, learn how to use Manch.
+          </span>
+          <button className="bg-[#DBF9B8] py-3 px-10">Check it out</button>
+        </div>
+        <div className="flex flex-col sm:flex-row items-end">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Button className="bg-[#2B2D2D] hover:bg-[#1F2121] text-white rounded-lg px-8 py-4 text-lg font-medium flex items-center space-x-2 h-auto">
+              <span>Book a call</span>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </Button>
 
-          <div className="flex items-center space-x-2 text-[#2B2D2D] cursor-pointer group">
-            <Play className="w-4 h-4 text-black ml-0.5" />
-            <span className="text-lg font-medium">See Manch in action</span>
+            <div className="flex items-center space-x-2 text-[#2B2D2D] cursor-pointer group">
+              <Play className="w-4 h-4 text-black ml-0.5" />
+              <span className="text-lg font-medium">See Manch in action</span>
+            </div>
           </div>
         </div>
       </div>
