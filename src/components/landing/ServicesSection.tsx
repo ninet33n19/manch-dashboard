@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import HighlightedText from "../ui/highlighted-text";
 
@@ -10,7 +13,7 @@ const Card = ({
   description: string;
   image: string;
 }) => (
-  <div className="flex flex-col gap-4 p-6 rounded-3xl transition-shadow duration-300 max-w-80">
+  <div className="flex flex-col gap-4 p-6 rounded-3xl transition-shadow duration-300 min-w-80 max-w-80">
     <Image src={image} alt={title} width={320} height={500} />
     <h2 className="text-xl font-semibold">{title}</h2>
     <p className="text-gray-600">{description}</p>
@@ -18,45 +21,157 @@ const Card = ({
 );
 
 export default function ServicesSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Duplicate the cards to have more items to scroll through
+  const cards = [
+    {
+      title: "Sports Disputes",
+      description:
+        "Resolve sports-related conflicts efficiently through a neutral forum",
+      image: "/assests/sports.png",
+    },
+    {
+      title: "E-commerce Disputes",
+      description:
+        "Designed to address consumer complaints, product issues & refund failures.",
+      image: "/assests/ecommerce.png",
+    },
+    {
+      title: "Art Disputes",
+      description:
+        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+      image: "/assests/art.png",
+    },
+    {
+      title: "Sports Disputes",
+      description:
+        "Resolve sports-related conflicts efficiently through a neutral forum",
+      image: "/assests/sports.png",
+    },
+    {
+      title: "E-commerce Disputes",
+      description:
+        "Designed to address consumer complaints, product issues & refund failures.",
+      image: "/assests/ecommerce.png",
+    },
+    {
+      title: "Art Disputes",
+      description:
+        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+      image: "/assests/art.png",
+    },
+    {
+      title: "Sports Disputes",
+      description:
+        "Resolve sports-related conflicts efficiently through a neutral forum",
+      image: "/assests/sports.png",
+    },
+    {
+      title: "E-commerce Disputes",
+      description:
+        "Designed to address consumer complaints, product issues & refund failures.",
+      image: "/assests/ecommerce.png",
+    },
+    {
+      title: "Art Disputes",
+      description:
+        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+      image: "/assests/art.png",
+    },
+  ];
+
+  const cardsPerView = 3;
+  const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+  const scrollLeft = () => {
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const scrollRight = () => {
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+  };
+
   return (
-    <div className="flex flex-col mt-56 gap-20 justify-center items-center mx-36 ">
+    <div className="flex flex-col mt-56 gap-20 justify-center items-center mx-36">
       <h1 className="text-5xl font-inter font-medium text-center leading-tight w-full">
         The Opportunity for Justice in a{" "}
         <HighlightedText>virtual world.</HighlightedText>
       </h1>
-      <div className="flex gap-4">
-        <Card
-          title="Sports Disputes"
-          description="Resolve sports-related conflicts efficiently through a neutral forum"
-          image="/assests/sports.png"
-        />
-        <Card
-          title="E-commerce Disputes"
-          description="Designed to address consumer complaints, product issues & refund failures."
-          image="/assests/ecommerce.png"
-        />
-        <Card
-          title="Art Disputes"
-          description="Address issues of authenticity, ownership, provenance, copyright & exhibition agreements."
-          image="/assests/art.png"
-        />
-      </div>
-      <div className="flex gap-4">
-        <Card
-          title="Sports Disputes"
-          description="Resolve sports-related conflicts efficiently through a neutral forum"
-          image="/assests/sports.png"
-        />
-        <Card
-          title="E-commerce Disputes"
-          description="Designed to address consumer complaints, product issues & refund failures."
-          image="/assests/ecommerce.png"
-        />
-        <Card
-          title="Art Disputes"
-          description="Address issues of authenticity, ownership, provenance, copyright & exhibition agreements."
-          image="/assests/art.png"
-        />
+
+      <div className="relative w-full max-w-6xl">
+        {/* Navigation Buttons */}
+        <button
+          onClick={scrollLeft}
+          disabled={currentIndex === 0}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 border"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <button
+          onClick={scrollRight}
+          disabled={currentIndex === maxIndex}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 border"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+
+        {/* Cards Container */}
+        <div className="overflow-hidden px-16">
+          <div
+            className="flex gap-4 transition-transform duration-300 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * (320 + 16)}px)`, // 320px card width + 16px gap
+            }}
+          >
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="flex justify-center gap-2 mt-8">
+          {Array.from({ length: maxIndex + 1 }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                index === currentIndex
+                  ? "bg-blue-600"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

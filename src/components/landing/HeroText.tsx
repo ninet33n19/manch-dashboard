@@ -61,7 +61,7 @@ export function HeroText() {
             </Button>
 
             <div className="flex items-center space-x-2 text-[#2B2D2D] cursor-pointer group">
-              <Play className="w-4 h-4 text-black ml-0.5" />
+              <Play className="size-4 text-black ml-0.5" />
               <span className="text-lg font-medium">See Manch in action</span>
             </div>
           </div>

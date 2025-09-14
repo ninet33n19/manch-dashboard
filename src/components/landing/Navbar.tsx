@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 export function Navbar() {
-  const [isVisible, setIsVisible] = useState(true); // Start visible by default
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
@@ -47,7 +47,8 @@ export function Navbar() {
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-4">
           <Link href="/the-panel" passHref className="text-white py-2.5 px-3">
-            The Panel
+            <span className="block min-[1320px]:hidden">Panel</span>
+            <span className="hidden min-[1320px]:block">The Panel</span>
           </Link>
           <Link href="/academy" passHref className="text-white py-2.5 px-3">
             Academy
