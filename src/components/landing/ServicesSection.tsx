@@ -3,6 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import HighlightedText from "../ui/highlighted-text";
+import { Badge } from "../ui/badge";
+import { Fraunces } from "next/font/google";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+});
 
 const Card = ({
   title,
@@ -20,66 +26,65 @@ const Card = ({
   </div>
 );
 
+const cards = [
+  {
+    title: "Sports Disputes",
+    description:
+      "Resolve sports-related conflicts efficiently through a neutral forum",
+    image: "/assests/sports.png",
+  },
+  {
+    title: "E-commerce Disputes",
+    description:
+      "Designed to address consumer complaints, product issues & refund failures.",
+    image: "/assests/ecommerce.png",
+  },
+  {
+    title: "Art Disputes",
+    description:
+      "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+    image: "/assests/art.png",
+  },
+  {
+    title: "Sports Disputes",
+    description:
+      "Resolve sports-related conflicts efficiently through a neutral forum",
+    image: "/assests/sports.png",
+  },
+  {
+    title: "E-commerce Disputes",
+    description:
+      "Designed to address consumer complaints, product issues & refund failures.",
+    image: "/assests/ecommerce.png",
+  },
+  {
+    title: "Art Disputes",
+    description:
+      "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+    image: "/assests/art.png",
+  },
+  {
+    title: "Sports Disputes",
+    description:
+      "Resolve sports-related conflicts efficiently through a neutral forum",
+    image: "/assests/sports.png",
+  },
+  {
+    title: "E-commerce Disputes",
+    description:
+      "Designed to address consumer complaints, product issues & refund failures.",
+    image: "/assests/ecommerce.png",
+  },
+  {
+    title: "Art Disputes",
+    description:
+      "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
+    image: "/assests/art.png",
+  },
+];
+
 export default function ServicesSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Duplicate the cards to have more items to scroll through
-  const cards = [
-    {
-      title: "Sports Disputes",
-      description:
-        "Resolve sports-related conflicts efficiently through a neutral forum",
-      image: "/assests/sports.png",
-    },
-    {
-      title: "E-commerce Disputes",
-      description:
-        "Designed to address consumer complaints, product issues & refund failures.",
-      image: "/assests/ecommerce.png",
-    },
-    {
-      title: "Art Disputes",
-      description:
-        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-      image: "/assests/art.png",
-    },
-    {
-      title: "Sports Disputes",
-      description:
-        "Resolve sports-related conflicts efficiently through a neutral forum",
-      image: "/assests/sports.png",
-    },
-    {
-      title: "E-commerce Disputes",
-      description:
-        "Designed to address consumer complaints, product issues & refund failures.",
-      image: "/assests/ecommerce.png",
-    },
-    {
-      title: "Art Disputes",
-      description:
-        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-      image: "/assests/art.png",
-    },
-    {
-      title: "Sports Disputes",
-      description:
-        "Resolve sports-related conflicts efficiently through a neutral forum",
-      image: "/assests/sports.png",
-    },
-    {
-      title: "E-commerce Disputes",
-      description:
-        "Designed to address consumer complaints, product issues & refund failures.",
-      image: "/assests/ecommerce.png",
-    },
-    {
-      title: "Art Disputes",
-      description:
-        "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-      image: "/assests/art.png",
-    },
-  ];
 
   const cardsPerView = 3;
   const maxIndex = Math.max(0, cards.length - cardsPerView);
@@ -93,7 +98,17 @@ export default function ServicesSection() {
   };
 
   return (
-    <div className="flex flex-col mt-56 gap-20 justify-center items-center mx-36">
+    <div className="flex flex-col gap-20 justify-center items-center mx-36 mt-[74px]">
+      <div className="flex">
+        <Badge
+          className={`bg-[#DBF9B8] text-black rounded-[12px] size-8 ${fraunces.className}`}
+        >
+          मंच
+        </Badge>
+        <Badge className="text-sm bg-[#FBFBFB] text-[#2B2D2D]">
+          Meet मंच manch
+        </Badge>
+      </div>
       <h1 className="text-5xl font-inter font-medium text-center leading-tight w-full">
         The Opportunity for Justice in a{" "}
         <HighlightedText>virtual world.</HighlightedText>

@@ -1,7 +1,21 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import HighlightedText from "../ui/highlighted-text";
-import { ScanBarcodeIcon } from "lucide-react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  GripVerticalIcon,
+  ScanBarcodeIcon,
+  SearchIcon,
+} from "lucide-react";
+import { Fraunces } from "next/font/google";
+import { Table, TableBody, TableCell, TableRow } from "../ui/table";
+import { Checkbox } from "../ui/checkbox";
+import { ecommerceDisputesFaqData } from "@/data/ecommerce-disputes-faq-data";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+});
 
 interface CardProps {
   title: string;
@@ -15,15 +29,13 @@ const Card = ({ title, description, children, className = "" }: CardProps) => {
     <div
       className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-col font-inter ${className}`}
     >
-      <h2 className="text-3xl text-[#2B2D2D] mb-3 leading-tight font-inter font-medium">
+      <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
         {title}
       </h2>
 
-      <p className="text-xl text-[#666666] font-sans pb-10">{description}</p>
+      <p className="text-xl text-[#666666] font-sans">{description}</p>
 
-      <div className="mt-8 flex-grow mx-auto justify-center items-center">
-        {children}
-      </div>
+      <div className="pt-10">{children}</div>
     </div>
   );
 };
@@ -37,7 +49,7 @@ const QRCodeCard = () => {
           Code Scan
         </span>
       </div>
-      <div className="bg-[#F7F6F6] py-8 px-[75px] rounded-2xl">
+      <div className="bg-[#F7F6F6] py-5 px-[75px] rounded-2xl">
         <Image src="/assests/qr.svg" width={170} height={170} alt={""} />
       </div>
       <button className="bg-white rounded-full border py-3.5">
@@ -47,47 +59,186 @@ const QRCodeCard = () => {
   );
 };
 
+const feesDisputeContent: {
+  id: number;
+  emoji: string;
+  disputeType: string;
+  selected: boolean;
+}[] = [
+  {
+    id: 1,
+    emoji: "🇺🇸",
+    disputeType: "Online Arbitration",
+    selected: true,
+  },
+  { emoji: "🇯🇵", id: 2, disputeType: "Online Mediation", selected: true },
+  { emoji: "🇮🇩", id: 3, disputeType: "AI Insight", selected: true },
+  { emoji: "🇦🇺", id: 4, disputeType: "Expidited Arbitration", selected: true },
+];
+
+const FeesDisputeCard = () => {
+  return (
+    <div className="flex flex-col gap-2.5">
+      {/*Search Bar*/}
+      <div className="bg-white flex p-[18px] rounded-full gap-3 w-full">
+        <SearchIcon />
+        <div className="flex">
+          <p className="text-black font-semibold">|</p>
+          <p className="font-inter font-regular text-[18px] text-[#8C8C8C]">
+            Type Dispute Value
+          </p>
+        </div>
+      </div>
+
+      {/*Table*/}
+      <Table className="bg-white rounded-xl p-4">
+        <TableBody>
+          {feesDisputeContent.map((content) => (
+            <TableRow key={content.id}>
+              <TableCell className="pl-4 py-4">{content.emoji}</TableCell>
+              <TableCell className="pl-4 py-4">{content.disputeType}</TableCell>
+              <TableCell className="pl-4 py-4">
+                <Checkbox defaultChecked />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+};
+
+const WorkSpaceCard = () => {
+  return (
+    <div className="max-w-sm rounded-2xl p-5 font-inter">
+      <div className="flex flex-col gap-2.5">
+        {/* Top pill */}
+        <div className="bg-[#2B2D2D] flex w-full items-center rounded-full pr-6 pl-3.5 py-3">
+          <span className="text-white font-inter font-medium text-[18px] flex-1 text-center">
+            Fill Application Form
+          </span>
+          <div className="flex items-center">
+            <ChevronDownIcon className="text-white" />
+          </div>
+        </div>
+
+        {/* Expertise Card (white area from the image) */}
+        <div className="bg-white rounded-2xl border border-gray-100 p-4">
+          <div className="text-[#666666] font-inter font-normal text-[16px] mb-4">
+            Expertise
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {/* Item 1 */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <GripVerticalIcon className="size-[18px] mr-2.5" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                    <img src="/icons/fintechs.svg" />
+                  </div>
+                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                    Fintechs
+                  </div>
+                </div>
+              </div>
+
+              {/* selected check */}
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center">
+                  <CheckIcon />
+                </div>
+              </div>
+            </div>
+
+            {/* Item 2 */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <GripVerticalIcon className="size-[18px] mr-2.5" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                    <img src="/icons/sports" />
+                  </div>
+                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                    Sports
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
+                  ⌘ 1
+                </div>
+              </div>
+            </div>
+
+            {/* Item 3 */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <GripVerticalIcon className="size-[18px] mr-2.5" />
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
+                    <img src="/icons/maritime.svg" />
+                  </div>
+                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                    Maritime
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
+                  ⌘ 2
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export function FeatureShowcase() {
   return (
-    <div className="mt-40 mx-10 ">
+    <div className="mt-[90px] mx-10 ">
       <div className="flex flex-col justify-center items-center gap-8">
-        <div className="flex gap-1">
-          <Badge className="bg-[#DBF9B8] text-black">मंच</Badge>
-          <span className="text-sm">Meet Manch</span>
+        <div className="flex">
+          <Badge
+            className={`bg-[#DBF9B8] text-black rounded-[12px] size-8 ${fraunces.className}`}
+          >
+            मंच
+          </Badge>
+          <Badge className="text-sm bg-[#FBFBFB] text-[#2B2D2D]">
+            Meet मंच manch
+          </Badge>
         </div>
-        <h1 className="text-5xl text-center mt-6 w-full leading-tight font-inter font-medium">
+        <h1 className="text-[45px] text-center mt-6 w-full leading-tight font-inter font-medium text-[#2B2D2D]">
           Disputes Resolved in Clicks,{" "}
           <HighlightedText>Not Courtroom</HighlightedText>
         </h1>
       </div>
       <div className="flex mt-20 gap-4">
         <Card
-          title="Our Resolution Fees "
+          title="Know the fees for your disputes"
           description="Convert currencies using real market rates, save money on international transfers."
+          className="flex-1"
         >
-          <Image
-            src="/assests/currency.png"
-            height={310}
-            width={256}
-            alt={""}
-          />
+          <FeesDisputeCard />
         </Card>
         <Card
           title="Our Dispute Resolution Rules"
           description="Curious minds get rewarded — scan this QR code to read our Rules!"
+          className="flex-1"
         >
           <QRCodeCard />
         </Card>
         <Card
           title="Apply to be a Neutral and join our Roaster!"
           description="Keep your teams and data perfectly organized in separate workspaces."
+          className="flex-1"
         >
-          <Image
-            src="/assests/workspaces.png"
-            height={310}
-            width={279}
-            alt={""}
-          />
+          <WorkSpaceCard />
         </Card>
       </div>
       <div className="flex mt-4 pt-14 pl-10 bg-[#f7f6f2] justify-between rounded-3xl">

@@ -3,13 +3,12 @@ import { ArrowRight, ChevronRight, Play, SwatchBookIcon } from "lucide-react";
 
 export function HeroText() {
   return (
-    <div className="flex mx-10 mt-56 mb-32">
+    <div className="flex mx-10 mt-56 mb-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
-        <div className="space-y-6 lg:space-y-8">
+        <div className="space-y-6 lg:space-y-8 w-full">
           <div className="space-y-1.5">
-            <h1 className="text-5xl font-inter text-[#2B2D2D] leading-tight">
-              <span className="block">Dispute Resolution for</span>
-              <span className="block">the Digital Generation</span>
+            <h1 className="text-5xl font-inter text-[#2B2D2D] leading-tight w-full">
+              Dispute Resolution for the Digital Generation
             </h1>
           </div>
 
@@ -40,7 +39,7 @@ export function HeroText() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 items-end">
+      {/*<div className="flex flex-col gap-4 items-end">
         <div className="bg-white rounded-2xl flex flex-col gap-4 px-5 py-4 w-56 h-fit">
           <div className="flex gap-4">
             <SwatchBookIcon />
@@ -66,7 +65,7 @@ export function HeroText() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 }

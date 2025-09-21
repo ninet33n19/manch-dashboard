@@ -10,7 +10,7 @@ export default function LegalLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${inter.className} bg-[#F3F2F1]`}>
+    <div className={`${inter.className} bg-[#F6F5F4]`}>
       <main>
         <Navbar />
         {children}
