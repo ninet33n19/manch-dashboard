@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Dispute {
   icon: React.ReactNode;
   title: string;
@@ -35,9 +37,9 @@ const DisputeTypes: React.FC = () => {
   return (
     <section className="relative w-full overflow-hidden bg-[#F5F4F3] py-16 lg:py-24">
       <div className="mx-10 px-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-          {/* Left Side: Text content and dispute cards */}
-          <div className="flex-1 lg:max-w-[50%] flex flex-col items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-2">
+          {/* Left Side: Dispute cards */}
+          <div className="flex flex-col items-start">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
               {disputes.map((dispute, index) => (
                 <div
@@ -61,8 +63,30 @@ const DisputeTypes: React.FC = () => {
           </div>
 
           {/* Right Side: Image */}
-          <div className="flex-1 lg:max-w-[50%] flex justify-end">
-            <img src="/assests/people.png" />
+          <div>
+            {/* Full-width image for screens < 1280px */}
+            <div className="block xl:hidden -mx-10 w-[calc(100%+5rem)] relative h-[463px]">
+              <Image
+                src="/assets/people.png"
+                alt="Happy team collaborating"
+                fill={true}
+                sizes="100vw"
+                className="object-contain object-center"
+                priority
+              />
+            </div>
+
+            {/* Regular image for screens >= 1280px */}
+            <div className="hidden xl:block relative w-[600px] h-[463px]">
+              <Image
+                src="/assets/people.png"
+                alt="Happy team collaborating"
+                fill={true}
+                sizes="(max-width: 1536px) 50vw, 33vw"
+                className="object-contain object-center"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

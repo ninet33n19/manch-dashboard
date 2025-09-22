@@ -62,7 +62,7 @@ const PlatformFeatures = () => {
         description="Multiple Language Interfaces & Integrated Secure Video Conferencing"
         cardOneImage={
           <img
-            src="/assests/for-language.png"
+            src="/assets/for-language.png"
             alt="Language Selection Interface"
             className="rounded-2xl h-60"
           />
@@ -70,7 +70,7 @@ const PlatformFeatures = () => {
         cardOneText="Available in European languages plus Arabic and Hindi, with system administration in participants' native language"
         cardTwoImage={
           <img
-            src="/assests/id-something.png"
+            src="/assets/id-something.png"
             alt="Integrated Secure Video Conferencing"
             className="rounded-2xl h-60"
           />
@@ -81,18 +81,18 @@ const PlatformFeatures = () => {
         icon=<User2Icon />
         badgeName="For Business"
         description="E-Signature & Reports"
-        cardOneImage=<img src="/assests/01.png" className="rounded-2xl h-60" />
+        cardOneImage=<img src="/assets/01.png" className="rounded-2xl h-60" />
         cardOneText="Built-in eSignature feature for signing documents and converting  handwritten signatures to digital format"
-        cardTwoImage=<img src="/assests/02.png" className="rounded-2xl h-60" />
+        cardTwoImage=<img src="/assets/02.png" className="rounded-2xl h-60" />
         cardTwoText="Exportable reports of monthly cases by value and dispute type"
       />
       <PlatformFeaturesCard
         icon=<RockingChairIcon />
         badgeName="For Legal Professionals"
         description="Choice of ADR & Shared Documents"
-        cardOneImage=<img src="/assests/03.png" className="rounded-2xl h-60" />
+        cardOneImage=<img src="/assets/03.png" className="rounded-2xl h-60" />
         cardOneText="Multiple ADR types including arbitration, adjudication, and  mediation with automatic method configuration"
-        cardTwoImage=<img src="/assests/04.png" className="rounded-2xl h-60" />
+        cardTwoImage=<img src="/assets/04.png" className="rounded-2xl h-60" />
         cardTwoText="Upload and share documents with other participants, with  encryption for downloads and confidential mediation alerts"
       />
       <PlatformFeaturesCard
@@ -100,9 +100,9 @@ const PlatformFeatures = () => {
         badgeName="For Consumers"
         description="Strategic decisions
         are now real-time"
-        cardOneImage=<img src="/assests/05.png" className="rounded-2xl h-60" />
+        cardOneImage=<img src="/assets/05.png" className="rounded-2xl h-60" />
         cardOneText="Fully integrated document management and video  conferencing suite with virtual hearings capability"
-        cardTwoImage=<img src="/assests/06.png" className="rounded-2xl h-60" />
+        cardTwoImage=<img src="/assets/06.png" className="rounded-2xl h-60" />
         cardTwoText="Negotiate with AI tools that help read contracts, suggest your best settlement options, flag any risks and help you choose a language."
       />
     </div>

@@ -31,55 +31,55 @@ const cards = [
     title: "Sports Disputes",
     description:
       "Resolve sports-related conflicts efficiently through a neutral forum",
-    image: "/assests/sports.png",
+    image: "/assets/sports.png",
   },
   {
     title: "E-commerce Disputes",
     description:
       "Designed to address consumer complaints, product issues & refund failures.",
-    image: "/assests/ecommerce.png",
+    image: "/assets/ecommerce.png",
   },
   {
     title: "Art Disputes",
     description:
       "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-    image: "/assests/art.png",
+    image: "/assets/art.png",
   },
   {
     title: "Sports Disputes",
     description:
       "Resolve sports-related conflicts efficiently through a neutral forum",
-    image: "/assests/sports.png",
+    image: "/assets/sports.png",
   },
   {
     title: "E-commerce Disputes",
     description:
       "Designed to address consumer complaints, product issues & refund failures.",
-    image: "/assests/ecommerce.png",
+    image: "/assets/ecommerce.png",
   },
   {
     title: "Art Disputes",
     description:
       "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-    image: "/assests/art.png",
+    image: "/assets/art.png",
   },
   {
     title: "Sports Disputes",
     description:
       "Resolve sports-related conflicts efficiently through a neutral forum",
-    image: "/assests/sports.png",
+    image: "/assets/sports.png",
   },
   {
     title: "E-commerce Disputes",
     description:
       "Designed to address consumer complaints, product issues & refund failures.",
-    image: "/assests/ecommerce.png",
+    image: "/assets/ecommerce.png",
   },
   {
     title: "Art Disputes",
     description:
       "Address issues of authenticity, ownership, provenance, copyright & exhibition agreements.",
-    image: "/assests/art.png",
+    image: "/assets/art.png",
   },
 ];
 

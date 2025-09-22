@@ -22,19 +22,42 @@ interface CardProps {
   description: string;
   children: React.ReactNode;
   className?: string;
+  isHorizontal?: boolean;
 }
 
-const Card = ({ title, description, children, className = "" }: CardProps) => {
+const Card = ({
+  title,
+  description,
+  children,
+  className = "",
+  isHorizontal = false,
+}: CardProps) => {
+  if (isHorizontal) {
+    return (
+      <div
+        className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-row xl:flex-col justify-between xl:justify-start font-inter ${className} w-full`}
+      >
+        <div className="flex-1 xl:flex-none">
+          <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
+            {title}
+          </h2>
+          <p className="text-xl text-[#666666] font-sans">{description}</p>
+        </div>
+        <div className="flex-1 xl:flex-none pt-0 xl:pt-10">{children}</div>
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-col font-inter ${className}`}
+      className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-col font-inter ${className} w-full`}
     >
-      <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
-        {title}
-      </h2>
-
-      <p className="text-xl text-[#666666] font-sans">{description}</p>
-
+      <div>
+        <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
+          {title}
+        </h2>
+        <p className="text-xl text-[#666666] font-sans">{description}</p>
+      </div>
       <div className="pt-10">{children}</div>
     </div>
   );
@@ -49,8 +72,8 @@ const QRCodeCard = () => {
           Code Scan
         </span>
       </div>
-      <div className="bg-[#F7F6F6] py-5 px-[75px] rounded-2xl">
-        <Image src="/assests/qr.svg" width={170} height={170} alt={""} />
+      <div className="bg-[#F7F6F6] py-5 px-[75px] rounded-2xl flex justify-center">
+        <Image src="/assets/qr.svg" width={170} height={170} alt={""} />
       </div>
       <button className="bg-white rounded-full border py-3.5">
         Renew Code
@@ -218,7 +241,7 @@ export function FeatureShowcase() {
           <HighlightedText>Not Courtroom</HighlightedText>
         </h1>
       </div>
-      <div className="flex mt-20 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-3 mt-20 gap-4">
         <Card
           title="Know the fees for your disputes"
           description="Convert currencies using real market rates, save money on international transfers."
@@ -236,7 +259,8 @@ export function FeatureShowcase() {
         <Card
           title="Apply to be a Neutral and join our Roaster!"
           description="Keep your teams and data perfectly organized in separate workspaces."
-          className="flex-1"
+          className="flex-1 col-span-2 xl:col-span-1"
+          isHorizontal={true}
         >
           <WorkSpaceCard />
         </Card>

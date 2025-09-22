@@ -6,9 +6,9 @@ import AboutCta from "@/components/about/AboutCta";
 import Footer from "@/components/ui/footer";
 
 const images = [
-  "/assests/office.jpg",
-  "/assests/office.jpg",
-  "/assests/office.jpg",
+  "/assets/office.jpg",
+  "/assets/office.jpg",
+  "/assets/office.jpg",
 ];
 
 export default function AboutPage() {

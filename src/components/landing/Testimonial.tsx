@@ -65,25 +65,25 @@ const TestimonialCard = ({
 const testimonialsData = [
   {
     isImage: true,
-    imageSrc: "/assests/overlay-1.png",
+    imageSrc: "/assets/overlay-1.png",
   },
   {
     isImage: false,
     comment:
       "As a solo founder, I needed something that wouldn't require a CFO to understand. This platform turned our messy finances into clear, actionable insights from day one.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "Sarah Olsson",
     position: "Founder & CEO @Finns",
   },
   {
     isImage: true,
-    imageSrc: "/assests/overlay-2.png",
+    imageSrc: "/assets/overlay-2.png",
   },
   {
     isImage: false,
     comment:
       "The automation features have saved us countless hours. What used to take days now takes minutes, allowing us to focus on growth.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "John Doe",
     position: "COO @InnovateCo",
   },
@@ -91,47 +91,47 @@ const testimonialsData = [
     isImage: false,
     comment:
       "This platform turned our messy finances into clear, actionable insights from day one. It's incredibly intuitive and powerful.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "Jane Smith",
     position: "Marketing Head @Solutions",
   },
   {
     isImage: true,
-    imageSrc: "/assests/overlay-1.png",
+    imageSrc: "/assets/overlay-1.png",
   },
   {
     isImage: false,
     comment:
       "A must-have for any startup. It provides clarity and control over our financials, which is crucial for making smart decisions.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "Emily White",
     position: "Founder @TechStart",
   },
   {
     isImage: true,
-    imageSrc: "/assests/overlay-2.png",
+    imageSrc: "/assets/overlay-2.png",
   },
   {
     isImage: true,
-    imageSrc: "/assests/overlay-1.png",
+    imageSrc: "/assets/overlay-1.png",
   },
   {
     isImage: false,
     comment:
       "As a solo founder, I needed something that wouldn't require a CFO to understand. This platform turned our messy finances into clear, actionable insights from day one.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "Sarah Olsson",
     position: "Founder & CEO @Finns",
   },
   {
     isImage: true,
-    imageSrc: "/assests/overlay-2.png",
+    imageSrc: "/assets/overlay-2.png",
   },
   {
     isImage: false,
     comment:
       "The customer support is top-notch. They are always responsive and helpful, making the onboarding process a breeze.",
-    avatarSrc: "/assests/zoie.png",
+    avatarSrc: "/assets/zoie.png",
     name: "Michael Chen",
     position: "CEO @GrowthPath",
   },

@@ -112,6 +112,9 @@
 }
 
 @layer base {
+    ::selection {
+        @apply bg-[#D8F9B8] text-[#2B2D2D];
+    }
     * {
         @apply border-border outline-ring/50;
     }
@@ -154,7 +157,7 @@
 
 /*highlighted text effect css*/
 .highlight-svg {
-    background-image: url("/assests/highlight.svg");
+    background-image: url("/assets/highlight.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%; /* Stretches the SVG to fit the text */
     padding: 0.1em 0.2em; /* Add some padding to make the highlight larger than the text */
