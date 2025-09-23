@@ -1,5 +1,6 @@
-import { RockingChair, RockingChairIcon, User2Icon } from "lucide-react";
+import { RockingChairIcon, User2Icon } from "lucide-react";
 import { Badge } from "../ui/badge";
+import { OurPlatform1Util, OurPlatform2Util } from "./PlatformFeatureUtil";
 
 interface PlatformFeaturesCardProps {
   icon: React.ReactNode;
@@ -31,11 +32,11 @@ const PlatformFeaturesCard = ({
             {badgeName}
           </Badge>
         </div>
-        <p className="font-inter font-medium text-4xl text-[#2B2D2D] max-w-lg">
+        <p className="font-inter font-medium text-4xl text-[#2B2D2D]">
           {description}
         </p>
       </div>
-      <div className="flex gap-5 max-w-[850px]">
+      <div className="flex gap-5 max-w-[850px] xl:grid xl:grid-cols-2 xl:gap-8">
         <div className="flex flex-col gap-5">
           {cardOneImage}
           <p className="font-inter font-normal text-base text-[#666666] text-wrap">
@@ -57,52 +58,39 @@ const PlatformFeatures = () => {
   return (
     <div className="flex flex-col gap-44 mx-11 mt-44">
       <PlatformFeaturesCard
-        icon=<img src="/icons/coin.svg" alt="Coin Icon" />
+        icon={<img src="/icons/coin.svg" alt="Coin Icon" />}
         badgeName="Our Platform"
         description="Multiple Language Interfaces & Integrated Secure Video Conferencing"
-        cardOneImage={
-          <img
-            src="/assests/for-language.png"
-            alt="Language Selection Interface"
-            className="rounded-2xl h-60"
-          />
-        }
+        cardOneImage={<OurPlatform1Util />}
         cardOneText="Available in European languages plus Arabic and Hindi, with system administration in participants' native language"
-        cardTwoImage={
-          <img
-            src="/assests/id-something.png"
-            alt="Integrated Secure Video Conferencing"
-            className="rounded-2xl h-60"
-          />
-        }
+        cardTwoImage={<OurPlatform2Util />}
         cardTwoText="Fully integrated document management and video conferencing suite with virtual hearings capability"
       />
       <PlatformFeaturesCard
-        icon=<User2Icon />
+        icon={<User2Icon />}
         badgeName="For Business"
         description="E-Signature & Reports"
-        cardOneImage=<img src="/assests/01.png" className="rounded-2xl h-60" />
+        cardOneImage={<img src="/assets/01.png" className="rounded-2xl h-60" />}
         cardOneText="Built-in eSignature feature for signing documents and converting  handwritten signatures to digital format"
-        cardTwoImage=<img src="/assests/02.png" className="rounded-2xl h-60" />
+        cardTwoImage={<img src="/assets/02.png" className="rounded-2xl h-60" />}
         cardTwoText="Exportable reports of monthly cases by value and dispute type"
       />
       <PlatformFeaturesCard
-        icon=<RockingChairIcon />
+        icon={<RockingChairIcon />}
         badgeName="For Legal Professionals"
         description="Choice of ADR & Shared Documents"
-        cardOneImage=<img src="/assests/03.png" className="rounded-2xl h-60" />
+        cardOneImage={<img src="/assets/03.png" className="rounded-2xl h-60" />}
+        cardTwoImage={undefined}
         cardOneText="Multiple ADR types including arbitration, adjudication, and  mediation with automatic method configuration"
-        cardTwoImage=<img src="/assests/04.png" className="rounded-2xl h-60" />
         cardTwoText="Upload and share documents with other participants, with  encryption for downloads and confidential mediation alerts"
       />
       <PlatformFeaturesCard
-        icon=<RockingChairIcon />
+        icon={<RockingChairIcon />}
         badgeName="For Consumers"
-        description="Strategic decisions
-        are now real-time"
-        cardOneImage=<img src="/assests/05.png" className="rounded-2xl h-60" />
+        description="Strategic decisions are now real-time"
+        cardOneImage={<img src="/assets/05.png" className="rounded-2xl h-60" />}
         cardOneText="Fully integrated document management and video  conferencing suite with virtual hearings capability"
-        cardTwoImage=<img src="/assests/06.png" className="rounded-2xl h-60" />
+        cardTwoImage={<img src="/assets/06.png" className="rounded-2xl h-60" />}
         cardTwoText="Negotiate with AI tools that help read contracts, suggest your best settlement options, flag any risks and help you choose a language."
       />
     </div>
