@@ -277,7 +277,7 @@ export function FeatureShowcase() {
             materials.
           </p>
         </div>
-        <Image src="/dashboard.png" alt="" width={1000} height={1000} />
+        {/*<Image src="/dashboard.png" alt="" width={800} height={800} />*/}
       </div>
     </div>
   );

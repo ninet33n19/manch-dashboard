@@ -5,6 +5,7 @@ import Image from "next/image";
 import HighlightedText from "../ui/highlighted-text";
 import { Badge } from "../ui/badge";
 import { Fraunces } from "next/font/google";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -119,43 +120,21 @@ export default function ServicesSection() {
         <button
           onClick={scrollLeft}
           disabled={currentIndex === 0}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 border"
+          className="absolute -left-16 top-1/2 -translate-y-1/2 z-10 bg-[#2B2D2D] shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-900 transition-colors duration-200"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <ChevronLeftIcon className="size-6 text-white" />
         </button>
 
         <button
           onClick={scrollRight}
           disabled={currentIndex === maxIndex}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors duration-200 border"
+          className="absolute -right-16 top-1/2 -translate-y-1/2 z-10 bg-[#2B2D2D] shadow-lg rounded-full w-12 h-12 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-900 transition-colors duration-200"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+          <ChevronRightIcon className="size-6 text-white" />
         </button>
 
         {/* Cards Container */}
-        <div className="overflow-hidden px-16">
+        <div className="overflow-hidden">
           <div
             className="flex gap-4 transition-transform duration-300 ease-in-out"
             style={{

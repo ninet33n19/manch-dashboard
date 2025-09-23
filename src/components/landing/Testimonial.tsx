@@ -139,7 +139,7 @@ const testimonialsData = [
 
 const Testimonial = () => {
   return (
-    <div className="w-full max-w-4/5 mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-[#F7F7F7]">
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="flex flex-col gap-8 justify-center items-center">
         <div className="flex gap-1 justify-center items-center text-sm text-gray-700">
           {[...Array(5)].map((_, i) => (
@@ -155,29 +155,35 @@ const Testimonial = () => {
           <HighlightedText>मंच Manch</HighlightedText>
         </h2>
 
-        {/* The relative container for the grid and the fade overlays */}
+        {/* The relative container for the grid/row and the fade overlays */}
         <div className="relative w-full mt-8">
           {/* The scrollable grid container */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[720px] overflow-y-scroll pb-20 pt-20 [scrollbar-width:none] [-ms-overflow-style:none]">
-            {/* 2. Map over the data array */}
+          <div className="flex flex-row gap-6 overflow-x-auto overflow-y-hidden pb-8 pt-8 [scrollbar-width:none] [-ms-overflow-style:none] xl:grid xl:grid-cols-4 xl:gap-4 xl:h-[720px] xl:overflow-y-scroll xl:pb-20 xl:pt-20">
+            {/* Map over the data array */}
             {testimonialsData.map((testimonial, i) => (
-              <TestimonialCard
+              <div
                 key={i}
-                isImage={testimonial.isImage}
-                imageSrc={testimonial.imageSrc}
-                comment={testimonial.comment}
-                avatarSrc={testimonial.avatarSrc}
-                name={testimonial.name}
-                position={testimonial.position}
-              />
+                className="min-w-[340px] w-[340px] shrink-0 xl:min-w-0 xl:w-auto xl:h-auto"
+              >
+                <TestimonialCard
+                  isImage={testimonial.isImage}
+                  imageSrc={testimonial.imageSrc}
+                  comment={testimonial.comment}
+                  avatarSrc={testimonial.avatarSrc}
+                  name={testimonial.name}
+                  position={testimonial.position}
+                />
+              </div>
             ))}
           </div>
 
-          {/* Top fade overlay */}
-          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#F7F7F7] to-transparent pointer-events-none" />
+          {/* Left/Right fade overlays for horizontal scroll (shown on mobile/tablet, hidden on xl+) */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F7F7F7] to-transparent pointer-events-none xl:hidden" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F7F7F7] to-transparent pointer-events-none xl:hidden" />
 
-          {/* Bottom fade overlay */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F7F7F7] to-transparent pointer-events-none" />
+          {/* Top/Bottom fade overlays for vertical scroll (hidden on mobile/tablet, shown on xl+) */}
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#F7F7F7] to-transparent pointer-events-none hidden xl:block" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F7F7F7] to-transparent pointer-events-none hidden xl:block" />
         </div>
       </div>
     </div>
