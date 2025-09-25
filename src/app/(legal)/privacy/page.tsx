@@ -1,4 +1,3 @@
-import Footer from "@/components/ui/footer";
 import { privacyData } from "@/data/privacy-data";
 import Link from "next/link";
 
