@@ -32,11 +32,11 @@ const PlatformFeaturesCard = ({
             {badgeName}
           </Badge>
         </div>
-        <p className="font-inter font-medium text-4xl text-[#2B2D2D]">
+        <p className="font-inter font-medium text-3xl text-[#2B2D2D]">
           {description}
         </p>
       </div>
-      <div className="flex gap-5 max-w-[850px] xl:grid xl:grid-cols-2 xl:gap-8">
+      {/* <div className="flex gap-5 max-w-[850px] xl:grid xl:grid-cols-2 xl:gap-8">
         <div className="flex flex-col gap-5">
           {cardOneImage}
           <p className="font-inter font-normal text-base text-[#666666] text-wrap">
@@ -49,7 +49,7 @@ const PlatformFeaturesCard = ({
             {cardTwoText}
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -11,7 +11,7 @@ export function CtaAndTeam() {
             Try मंच Manch
           </Badge>
         </div>
-        <p className="text-center text-6xl text-white max-w-5xl leading-tight font-inter">
+        <p className="text-center text-5xl text-white max-w-5xl leading-tight font-inter">
           Turning disputes into agreements, online with our platform.
         </p>
         <Button className="bg-[#D8F9B8] text-[#2B2D2D] h-12 px-5">

@@ -150,7 +150,7 @@ const Testimonial = () => {
             <ChevronRightIcon className="text-black size-4" />
           </div>
         </div>
-        <h2 className="text-5xl font-medium text-center text-gray-800">
+        <h2 className="text-5xl font-medium text-center text-gray-800 w-full">
           Here's why businesses trust{" "}
           <HighlightedText>मंच Manch</HighlightedText>
         </h2>

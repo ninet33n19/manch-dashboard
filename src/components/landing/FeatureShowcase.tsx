@@ -35,7 +35,7 @@ const Card = ({
   if (isHorizontal) {
     return (
       <div
-        className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-row xl:flex-col justify-between xl:justify-start font-inter ${className} w-full`}
+        className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-row xl:flex-col justify-between xl:justify-start font-inter h-full ${className}`}
       >
         <div className="flex-1 xl:flex-none">
           <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
@@ -43,29 +43,31 @@ const Card = ({
           </h2>
           <p className="text-xl text-[#666666] font-sans">{description}</p>
         </div>
-        <div className="flex-1 xl:flex-none pt-0 xl:pt-10">{children}</div>
+        <div className="flex-1 xl:flex-none pt-0 xl:pt-10 h-full flex flex-col">
+          {children}
+        </div>
       </div>
     );
   }
 
   return (
     <div
-      className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-col font-inter ${className} w-full`}
+      className={`bg-[#EDEBEA] p-8 rounded-3xl flex flex-col font-inter h-full ${className}`}
     >
-      <div>
+      <div className="flex-1">
         <h2 className="text-[#2B2D2D] mb-3 leading-tight font-inter font-medium text-[26px]">
           {title}
         </h2>
         <p className="text-xl text-[#666666] font-sans">{description}</p>
       </div>
-      <div className="pt-10">{children}</div>
+      <div className="flex-1 pt-10">{children}</div>
     </div>
   );
 };
 
 const QRCodeCard = () => {
   return (
-    <div className="flex flex-col gap-5 p-5 rounded-2xl bg-white">
+    <div className="flex flex-col gap-5 p-5 rounded-2xl bg-white h-full justify-center">
       <div className="flex gap-2.5">
         <ScanBarcodeIcon />
         <span className="font-inter font-medium text-lg text-[#2B2D2D]">
@@ -75,9 +77,7 @@ const QRCodeCard = () => {
       <div className="bg-[#F7F6F6] py-5 px-[75px] rounded-2xl flex justify-center">
         <Image src="/assets/qr.svg" width={170} height={170} alt={""} />
       </div>
-      <button className="bg-white rounded-full border py-3.5">
-        Renew Code
-      </button>
+      <button className="bg-white rounded-full border py-3">Renew Code</button>
     </div>
   );
 };
@@ -99,9 +99,9 @@ const feesDisputeContent: {
   { emoji: "🇦🇺", id: 4, disputeType: "Expidited Arbitration", selected: true },
 ];
 
-const FeesDisputeCard = () => {
+const FeesDisputeCard = ({ className }: { className?: string }) => {
   return (
-    <div className="flex flex-col gap-2.5">
+    <div className={`flex flex-col gap-2.5 h-full ${className || ""}`}>
       {/*Search Bar*/}
       <div className="bg-white flex p-[18px] rounded-full gap-3 w-full">
         <SearchIcon />
@@ -114,7 +114,7 @@ const FeesDisputeCard = () => {
       </div>
 
       {/*Table*/}
-      <Table className="bg-white rounded-xl p-4">
+      <Table className="bg-white rounded-xl p-4 flex-1">
         <TableBody>
           {feesDisputeContent.map((content) => (
             <TableRow key={content.id}>
@@ -133,86 +133,84 @@ const FeesDisputeCard = () => {
 
 const WorkSpaceCard = () => {
   return (
-    <div className="max-w-sm rounded-2xl p-5 font-inter">
-      <div className="flex flex-col gap-2.5">
-        {/* Top pill */}
-        <div className="bg-[#2B2D2D] flex w-full items-center rounded-full pr-6 pl-3.5 py-3">
-          <span className="text-white font-inter font-medium text-[18px] flex-1 text-center">
-            Fill Application Form
-          </span>
-          <div className="flex items-center">
-            <ChevronDownIcon className="text-white" />
-          </div>
+    <div className="w-full h-full rounded-2xl p-5 font-inter flex flex-col justify-between">
+      {/* Top pill */}
+      <div className="bg-[#2B2D2D] flex w-full items-center rounded-full pr-6 pl-3.5 py-3 mb-4">
+        <span className="text-white font-inter font-medium text-[18px] flex-1 text-center">
+          Fill Application Form
+        </span>
+        <div className="flex items-center">
+          <ChevronDownIcon className="text-white" />
+        </div>
+      </div>
+
+      {/* Expertise Card - fill remaining height */}
+      <div className="bg-white rounded-2xl border border-gray-100 p-4 flex-1 flex flex-col">
+        <div className="text-[#666666] font-inter font-normal text-[16px] mb-4">
+          Expertise
         </div>
 
-        {/* Expertise Card (white area from the image) */}
-        <div className="bg-white rounded-2xl border border-gray-100 p-4">
-          <div className="text-[#666666] font-inter font-normal text-[16px] mb-4">
-            Expertise
+        <div className="flex flex-col gap-3">
+          {/* Item 1 */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <GripVerticalIcon className="size-[18px] mr-2.5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
+                  <img src="/icons/fintechs.svg" alt="Fintechs icon" />
+                </div>
+                <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                  Fintechs
+                </div>
+              </div>
+            </div>
+
+            {/* selected check */}
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center">
+                <CheckIcon />
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            {/* Item 1 */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <GripVerticalIcon className="size-[18px] mr-2.5" />
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
-                    <img src="/icons/fintechs.svg" />
-                  </div>
-                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
-                    Fintechs
-                  </div>
+          {/* Item 2 */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <GripVerticalIcon className="size-[18px] mr-2.5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
+                  <img src="/icons/sports" alt="Sports icon" />
                 </div>
-              </div>
-
-              {/* selected check */}
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full border border-gray-200 bg-white flex items-center justify-center">
-                  <CheckIcon />
+                <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                  Sports
                 </div>
               </div>
             </div>
 
-            {/* Item 2 */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <GripVerticalIcon className="size-[18px] mr-2.5" />
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
-                    <img src="/icons/sports" />
-                  </div>
-                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
-                    Sports
-                  </div>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
+                ⌘ 1
               </div>
+            </div>
+          </div>
 
+          {/* Item 3 */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <GripVerticalIcon className="size-[18px] mr-2.5" />
               <div className="flex items-center gap-3">
-                <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
-                  ⌘ 1
+                <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
+                  <img src="/icons/maritime.svg" alt="Maritime icon" />
+                </div>
+                <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
+                  Maritime
                 </div>
               </div>
             </div>
 
-            {/* Item 3 */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <GripVerticalIcon className="size-[18px] mr-2.5" />
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-                    <img src="/icons/maritime.svg" />
-                  </div>
-                  <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
-                    Maritime
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
-                  ⌘ 2
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="rounded-md border border-gray-200 px-3 py-1 text-sm text-gray-600">
+                ⌘ 2
               </div>
             </div>
           </div>
@@ -238,35 +236,43 @@ export function FeatureShowcase() {
         </div>
         <h1 className="text-[45px] text-center mt-6 w-full leading-tight font-inter font-medium text-[#2B2D2D]">
           Disputes Resolved in Clicks,{" "}
-          <HighlightedText>Not Courtroom</HighlightedText>
+          <HighlightedText>Not Courtrooms</HighlightedText>
         </h1>
       </div>
-      <div className="grid grid-cols-2 xl:grid-cols-3 mt-20 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-3 mt-20 gap-4 items-stretch">
         <Card
           title="Know the fees for your disputes"
           description="Convert currencies using real market rates, save money on international transfers."
-          className="flex-1"
+          className="flex-1 h-full"
         >
-          <FeesDisputeCard />
+          <div className="h-full flex flex-col">
+            <FeesDisputeCard className="flex-1" />
+          </div>
         </Card>
         <Card
           title="Our Dispute Resolution Rules"
           description="Curious minds get rewarded — scan this QR code to read our Rules!"
-          className="flex-1"
+          className="flex-1 h-full"
         >
-          <QRCodeCard />
+          <div className="h-full flex flex-col justify-center">
+            <QRCodeCard />
+          </div>
         </Card>
         <Card
           title="Apply to be a Neutral and join our Roaster!"
           description="Keep your teams and data perfectly organized in separate workspaces."
-          className="flex-1 col-span-2 xl:col-span-1"
+          className="flex-1 col-span-2 xl:col-span-1 h-full"
           isHorizontal={true}
         >
-          <WorkSpaceCard />
+          <div className="h-fit flex flex-col">
+            <WorkSpaceCard />
+          </div>
         </Card>
       </div>
-      <div className="flex mt-4 pt-14 pl-10 bg-[#f7f6f2] justify-between rounded-3xl">
-        <div className="flex flex-col gap-6 mr-8 max-w-lg">
+      <div className="flex mt-4 pt-14 pl-10 justify-between rounded-3xl relative overflow-hidden min-h-[500px]">
+        {" "}
+        <div className="absolute inset-0 z-0 bg-[url('/assets/dot-grid.svg')] bg-cover bg-center bg-no-repeat opacity-[0.16] mask-[linear-gradient(to_bottom,transparent_0%,black_5%,black_95%,transparent_100%)]" />
+        <div className="flex flex-col gap-6 mr-8 max-w-lg relative z-10 backdrop-blur-sm p-4 rounded-xl">
           <h1 className="font-inter font-medium text-3xl">
             Smart Resolutions Powered by{" "}
             <HighlightedText>Smarter Technology.</HighlightedText>
@@ -277,7 +283,13 @@ export function FeatureShowcase() {
             materials.
           </p>
         </div>
-        {/*<Image src="/dashboard.png" alt="" width={800} height={800} />*/}
+        <Image
+          src="/dashboard.svg"
+          alt=""
+          width={716}
+          height={532}
+          className="relative z-10"
+        />
       </div>
     </div>
   );
