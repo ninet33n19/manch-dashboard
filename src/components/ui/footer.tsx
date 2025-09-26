@@ -40,7 +40,7 @@ const Footer = ({ footerText, className }: FooterProps) => {
               Product
             </h2>
             <ul className="font-medium text-lg text-[#666666] space-y-3">
-              <li>Why Finns</li>
+              <li>Why Manch</li>
               <li>Platform</li>
               <li>Pricing</li>
               <li>What's new</li>
