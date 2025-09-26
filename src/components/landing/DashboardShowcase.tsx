@@ -28,10 +28,11 @@ export function DashboardShowcase() {
     <div className="flex flex-col justify-center items-center mx-10">
       <div className="bg-[#D8F9B8] rounded-3xl p-12">
         <Image
-          src="/dashboard.png"
+          src="/dashboard.svg"
           alt="Dashboard Showcase"
           width={1000}
           height={1000}
+          quality={100}
         />
       </div>
       {/*<div className="flex flex-col gap-8">*/}

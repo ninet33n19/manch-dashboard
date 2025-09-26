@@ -110,7 +110,7 @@ export default function ServicesSection() {
           Meet मंच manch
         </Badge>
       </div>
-      <h1 className="text-5xl font-inter font-medium text-center leading-tight w-full">
+      <h1 className="text-[42px] font-inter font-medium text-center leading-tight w-full">
         The Opportunity for Justice in a{" "}
         <HighlightedText>virtual world.</HighlightedText>
       </h1>
