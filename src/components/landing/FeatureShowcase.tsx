@@ -179,7 +179,7 @@ const WorkSpaceCard = () => {
               <GripVerticalIcon className="size-[18px] mr-2.5" />
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
-                  <img src="/icons/sports" alt="Sports icon" />
+                  <img src="/icons/sports.svg" alt="Sports icon" />
                 </div>
                 <div className="text-[18px] text-[#2B2D2] font-inter font-medium">
                   Sports
